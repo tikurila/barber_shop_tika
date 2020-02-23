@@ -1,0 +1,32 @@
+
+<div class="form-group">
+    <label>Ваш парикмахер:</label>
+<select  name="barber"  class="form-control">
+
+
+<% @barbers.each do |item| %>
+<option <%= @barber == item['name']? 'selected' : '' %>><%= item['name'] %></option>
+<% end %>
+
+</select>
+ </div>
+
+
+
+
+
+ class Create Clients < ActiveRecord::Migration[6.0]
+  def change
+
+  	create_table :clients do |t|
+  		t.text :name
+  		t.text :phone
+  		t.text :datestamp
+  		t.text :color
+
+  		t.timestamps
+  	end	
+  end
+end
+
+ 
